@@ -1,4 +1,4 @@
-= Notes on coil phantom experiments
+# Notes on coil phantom experiments
 
 TMS figure-8 coil inside 3T MRI scanner
 
@@ -9,11 +9,11 @@ Three different models were considered:
 * DetailPlusCoil(BSM-879) : multi loop 9 windings 7 layers figure8 TMS coild model 
 * XCoil : using half radius for each wing (Router-Rinner/2) for PLOSone reviers sake
 
-== DATA
+## DATA
 * /error_metrics/data.mat : you can find the empirical MRI data and the results for all the coil models we consider
 * /mri_data/xxx : RAW data as aquired from MRI scanner (see README.md inside)
 
-== SCIRun net files
+## SCIRun net files
 
 * XXX/gen_coil.fld : generate a particular coil model-XXX
 * set_coil.fld : position the coil based on a mapping matrix from navigation_coregistration

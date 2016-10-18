@@ -1,13 +1,14 @@
-= Notes on brain experiments
+# Notes on brain experiments
 
+Two orthogonal orientation for each of the three coil models considered
 
-== DATA
+## DATA
 
 * head_model.fld : file is EMPTY, since head model not publically shared
 * /ROI/xxx : misc files used to specify our ROI (M1 moto area of human cortex)
 * /error_metrics/all_export_result_metric.mat : results from FEM simulations
 
-== SCIRun net files
+## SCIRun net files
 
 * InspectAndImportMesh.srn : imports a 3D tetrahedral mesh from matlab mat file to scirun field format
 * inspect_mesh_headmodel.srn : visually inspect mesh quality
