@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE network PUBLIC "-//SCIRun/Network DTD" "network.dtd">
+<network version="v4.7" netversion="2" name="{Main}" bbox="{87 219 1665 943}" creationDate="{Wed Dec 16 2015}" creationTime="{14:33:23}" geometry="{1478x1143+0+0}">
+  <note>{}</note>
+  <modules>
+    <module id="m1" package="SCIRun" category="MiscField" name="ReportFieldInfo" version="1.0">
+      <position x="784" y="425"/>
+      <var name="ui_geometry" val="{1118x222+393+495}" substitute="no"/>
+    </module>
+    <module id="m2" package="SCIRun" category="NewField" name="CreateLatVol" version="1.0">
+      <position x="87" y="310"/>
+      <var name="sizex" val="{192}" substitute="no"/>
+      <var name="sizey" val="{192}" substitute="no"/>
+      <var name="sizez" val="{192}" substitute="no"/>
+      <var name="padpercent" val="{0.0}" substitute="no"/>
+      <var name="data-at" val="{Cells}" substitute="no"/>
+      <var name="element-size" val="{Mesh}" substitute="no"/>
+      <var name="ui_geometry" val="{292x265+804+444}" substitute="no"/>
+    </module>
+    <module id="m3" package="SCIRun" category="ChangeMesh" name="TransformMeshWithTransform" version="1.0">
+      <position x="119" y="514"/>
+    </module>
+    <module id="m4" package="SCIRun" category="Math" name="CreateMatrix" version="1.0">
+      <position x="198" y="438"/>
+      <var name="rows" val="{4}" substitute="no"/>
+      <var name="cols" val="{4}" substitute="no"/>
+      <var name="data" val="{{0.10 0.0 0.0 0.0} {0.0 0.10 0.0 0.0} {0.0 0.0 0.10 0.0} {0.0 0.0 0.0 1.0}}" substitute="no"/>
+      <var name="clabel" val="{0 1 2 3}" substitute="no"/>
+      <var name="rlabel" val="{0 1 2 3}" substitute="no"/>
+      <var name="ui_geometry" val="{424x227+740+493}" substitute="no"/>
+    </module>
+    <module id="m5" package="SCIRun" category="MiscField" name="ReportFieldInfo" version="1.0">
+      <position x="1537" y="773"/>
+      <var name="ui_geometry" val="{785x222+672+333}" substitute="no"/>
+    </module>
+    <module id="m6" package="SCIRun" category="MiscField" name="ReportFieldInfo" version="1.0">
+      <position x="570" y="893"/>
+      <var name="ui_geometry" val="{1118x222+217+200}" substitute="no"/>
+    </module>
+    <module id="m7" package="SCIRun" category="DataIO" name="WriteField" version="1.0">
+      <position x="819" y="896"/>
+      <var name="filename" val="{scisub_networkdir/brain_ROI_M1.fld}" filename="yes" substitute="yes"/>
+      <var name="filetype" val="{Binary}" substitute="no"/>
+      <var name="confirm" val="{0}" substitute="no"/>
+      <var name="confirm-once" val="{0}" substitute="no"/>
+      <var name="exporttype" val="{SCIRun Field Binary (*.fld)}" substitute="no"/>
+      <var name="increment" val="{0}" substitute="no"/>
+      <var name="current" val="{0}" substitute="no"/>
+      <var name="ui_geometry" val="{624x436+860+500}" substitute="no"/>
+    </module>
+    <module id="m8" package="Teem" category="DataIO" name="ReadNrrd" version="1.0" gui_visible="yes">
+      <position x="693" y="219"/>
+      <var name="filetype" val="{Nrrd Files (*.nhdr,*.nrrd,*.png,*.txt,*.vtk)}" substitute="no"/>
+      <var name="filename" val="{scisub_networkdir/brain_ROI_M1.nrrd}" filename="yes" substitute="yes"/>
+      <var name="from-env" val="{}" substitute="no"/>
+      <var name="ui_geometry" val="{624x345+862+530}" substitute="no"/>
+    </module>
+    <module id="m9" package="Teem" category="Converters" name="ConvertNrrdToField" version="1.0">
+      <position x="501" y="319"/>
+      <var name="datalocation" val="{Element}" substitute="no"/>
+      <var name="fieldtype" val="{ScalarField}" substitute="no"/>
+      <var name="convertparity" val="{Do Not Correct}" substitute="no"/>
+      <var name="ui_geometry" val="{468x107+716+523}" substitute="no"/>
+    </module>
+    <module id="m10" package="SCIRun" category="String" name="CreateString" version="1.0">
+      <position x="1081" y="690"/>
+      <var name="inputstring" val="{ROI/head_model_regular.fld&#10;&#10;&#10;&#10;}" substitute="no"/>
+      <var name="ui_geometry" val="{292x149+804+502}" substitute="no"/>
+    </module>
+    <module id="m11" package="SCIRun" category="ChangeFieldData" name="SetFieldData" version="1.0">
+      <position x="648" y="654"/>
+      <var name="keepscalartype" val="{0}" substitute="no"/>
+      <var name="ui_geometry" val="{292x47+804+553}" substitute="no"/>
+    </module>
+    <module id="m12" package="SCIRun" category="ChangeFieldData" name="GetFieldData" version="1.0">
+      <position x="516" y="455"/>
+    </module>
+  </modules>
+  <connections>
+    <connection id="c1" from="m11" fromport="0" to="m7" toport="0"/>
+    <connection id="c2" from="m11" fromport="0" to="m6" toport="0"/>
+    <connection id="c3" from="m3" fromport="0" to="m11" toport="0"/>
+    <connection id="c4" from="m2" fromport="0" to="m3" toport="0"/>
+    <connection id="c5" from="m9" fromport="0" to="m12" toport="0"/>
+    <connection id="c6" from="m9" fromport="0" to="m1" toport="0"/>
+    <connection id="c7" from="m8" fromport="0" to="m9" toport="0"/>
+    <connection id="c8" from="m4" fromport="0" to="m3" toport="1"/>
+    <connection id="c9" from="m10" fromport="0" to="m7" toport="1"/>
+    <connection id="c10" from="m8" fromport="0" to="m11" toport="2"/>
+  </connections>
+</network>

@@ -1,0 +1,5 @@
+trying to open file: 20150422_173501WIP1sl_si_TMS_1sl_1percSENSEs011a001x1.nii... DONE!
+-1 0 0 85.033
+0 0 -2 53.931
+0 1 0 -85.401
+0 0 0 1

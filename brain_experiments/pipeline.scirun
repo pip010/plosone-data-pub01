@@ -1,0 +1,6 @@
+-E gen_coil.srn
+-I coilgeom.png -E set_coil.srn
+-E ../solve_coil_field.srn
+-E ../solve_fem.srn
+-E ../vis_magvec.srn -I coilfield.png
+-E ../post_fem.srn -I ROI_M1.png

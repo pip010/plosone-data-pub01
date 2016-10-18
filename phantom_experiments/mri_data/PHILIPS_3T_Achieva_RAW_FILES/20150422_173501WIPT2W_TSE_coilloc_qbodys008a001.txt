@@ -1,0 +1,5 @@
+trying to open file: 20150422_173501WIPT2W_TSE_coilloc_qbodys008a001.nii... DONE!
+-1.5 0 0 119.25
+0 1.5 0 -48.299
+0 0 3 -72.202
+0 0 0 1

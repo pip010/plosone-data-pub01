@@ -1,0 +1,6 @@
+(cd CortexM1_SimpleCoil_Orientation1; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
+(cd CortexM1_SimpleCoil_Orientation2; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
+(cd CortexM1_DetailedCoil_Orientation1; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
+(cd CortexM1_DetailedCoil_Orientation2; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
+(cd CortexM1_DetailedPlusCoil_Orientation1; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
+(cd CortexM1_DetailedPlusCoil_Orientation2; python ../../scirun_pipe.py -f "../pipeline.scirun" "$@")
