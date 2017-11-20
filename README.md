@@ -1,5 +1,6 @@
 # plosone-data-pub01
 
+[![DOI](https://zenodo.org/badge/71119181.svg)](https://zenodo.org/badge/latestdoi/71119181)
 
 ## Notes
 
