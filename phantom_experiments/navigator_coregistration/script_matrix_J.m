@@ -1,27 +1,8 @@
 
-function Markers=loadmrk2(fname)
-
-	MAXCHAR=30;
-	nmarkers=0;
-	t=0;
-	fid=fopen(fname,'rb');
-	EOF=0;
-	while ~EOF
-	    Marker.MR_Name=fread(fid,MAXCHAR,'char');
-	    Marker.type=fread(fid,1,'int');
-	    Marker.MR_pos=fread(fid,3,'double');
-	    Marker.probe_pos=fread(fid,3,'double');
-	    EOF=feof(fid);
-	    if ~EOF
-	        t=t+1;
-	        Markers(t)=Marker;
-	    end
-	end
-	nmarkers=t;
-end
+source 'loadmrk2.m'
 
 % all captured points
-P = loadmrk2('markers_extras_captured.npt')
+P = loadmrk2('markers_extras_captured.npt');
 
 % points along symmetry lines of coil windings
 p1=P(9).probe_pos'; %left wing, coil surface and ~5cm underneath
@@ -51,9 +32,9 @@ JT = [
 0 1 0 p3(2);
 0 0 1 p3(3);
 0 0 0 1;
-]
+];
 
-J = JT * JR
+J = JT * JR;
 
 
 save -mat7-binary coil_capture_jacobi.mat J
